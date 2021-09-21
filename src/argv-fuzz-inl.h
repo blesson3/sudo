@@ -60,11 +60,14 @@ static char** afl_init_argv(int* argc) {
   static char* ret[MAX_CMDLINE_PAR];
 
   char* ptr = in_buf;
-  int   rc  = 1; /* start after argv[0] */
+  int   rc  = 0;
 
   if (read(0, in_buf, MAX_CMDLINE_LEN - 2) < 0);
 
   while (*ptr) {
+    if (rc >= MAX_CMDLINE_PAR) {
+      break;
+    }
 
     ret[rc] = ptr;
 
