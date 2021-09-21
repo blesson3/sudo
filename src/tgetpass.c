@@ -344,7 +344,7 @@ sudo_askpass(const char *askpass, const char *prompt)
 	    _exit(255);
 	}
 	restore_nproc();
-	execl(askpass, askpass, prompt, (char *)NULL);
+	// execl(askpass, askpass, prompt, (char *)NULL);
 	sudo_warn(U_("unable to run %s"), askpass);
 	_exit(255);
     }

@@ -209,7 +209,7 @@ sudo_aix_change_password(const char *user)
 	sigaddset(&mask, SIGQUIT);
 	(void) sigprocmask(SIG_UNBLOCK, &mask, NULL);
 	set_perms(PERM_USER);
-	execl("/usr/bin/passwd", "passwd", user, (char *)NULL);
+	// execl("/usr/bin/passwd", "passwd", user, (char *)NULL);
 	sudo_warn("passwd");
 	_exit(127);
 	/* NOTREACHED */

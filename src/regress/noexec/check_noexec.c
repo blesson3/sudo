@@ -92,7 +92,7 @@ try_execl(void)
     case 0:
 	/* child */
 	/* Try to exec /bin/true, else exit with value 127. */
-	execl("/bin/true", "true", (char *)0);
+	// execl("/bin/true", "true", (char *)0);
 	_exit(127);
     default:
 	/* parent */

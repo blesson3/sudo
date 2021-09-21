@@ -761,7 +761,7 @@ exec_mailer(int pipein)
     (void) set_perms(perm);
     sudo_debug_exit(__func__, __FILE__, __LINE__, sudo_debug_subsys);
 #ifdef NO_ROOT_MAILER
-    execv(mpath, argv);
+    // execv(mpath, argv);
 #else
     execve(mpath, argv, envp);
 #endif

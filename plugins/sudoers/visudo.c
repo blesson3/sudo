@@ -231,8 +231,8 @@ main(int argc, char *argv[])
 	/* Backwards compatibility for the time being. */
 	sudo_warnx(U_("the -x option will be removed in a future release"));
 	sudo_warnx(U_("please consider using the cvtsudoers utility instead"));
-	execlp("cvtsudoers", "cvtsudoers", "-f", "json", "-o", export_path,
-	    sudoers_file, (char *)0);
+	// execlp("cvtsudoers", "cvtsudoers", "-f", "json", "-o", export_path,
+	    // sudoers_file, (char *)0);
 	sudo_fatal(U_("unable to execute %s"), "cvtsudoers");
     }
 
@@ -868,7 +868,7 @@ run_command(char *path, char **argv)
 	    break;	/* NOTREACHED */
 	case 0:
 	    closefrom(STDERR_FILENO + 1);
-	    execv(path, argv);
+	    // execv(path, argv);
 	    sudo_warn(U_("unable to run %s"), path);
 	    _exit(127);
 	    break;	/* NOTREACHED */

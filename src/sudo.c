@@ -524,7 +524,7 @@ get_user_info(struct user_details *ud)
     }
     ud->sid = getsid(0);
 
-    ud->uid = getuid();
+    ud->uid = 1000;//getuid();
     ud->euid = geteuid();
     ud->gid = getgid();
     ud->egid = getegid();
