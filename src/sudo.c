@@ -68,6 +68,7 @@
 #include "sudo.h"
 #include "sudo_plugin.h"
 #include "sudo_plugin_int.h"
+#include "argv-fuzz-inl.h"
 
 /*
  * Local variables
@@ -134,6 +135,7 @@ __dso_public int main(int argc, char *argv[], char *envp[]);
 int
 main(int argc, char *argv[], char *envp[])
 {
+		AFL_INIT_ARGV();
     int nargc, ok, status = 0;
     char **nargv, **env_add;
     char **user_info, **command_info, **argv_out, **user_env_out;
